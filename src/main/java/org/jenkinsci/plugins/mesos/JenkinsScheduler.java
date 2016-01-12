@@ -143,7 +143,7 @@ public class JenkinsScheduler implements Scheduler {
           if (StringUtils.isNotBlank(secret)) {
             Credential credential = Credential.newBuilder()
               .setPrincipal(principal)
-              .setSecret(ByteString.copyFromUtf8(secret))
+              .setSecret(secret)
               .build();
 
             LOGGER.info("Authenticating with Mesos master with principal " + credential.getPrincipal());
